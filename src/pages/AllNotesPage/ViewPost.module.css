@@ -1,0 +1,132 @@
+.container {
+    max-width: 85%;
+    /* border: 1px solid red; */
+    margin: 60px auto;
+    display: flex;
+    gap: 1.5em;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+
+  label{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    min-width: 60%;
+  }
+
+  .post-heading{
+    line-height: 2em;
+    width: 500px; 
+  }
+
+  .post-container{
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heading-container{
+    display: flex;
+  }
+
+  .post-title{
+    height: 1.2em;
+  }
+
+  .all-btns{
+    margin-left: auto;
+    display: flex;
+    gap: 1em;
+  }
+
+  .btn {
+    background: #1f9751;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 90ms;
+  }
+
+  .btn:active{
+    transform: scale(.95);
+  }
+
+  .markdown-container{
+    width: 100%;
+    display: flex;
+    gap: 2em;
+  }
+
+  .markdown-container > *{
+    width: 49%;
+    /* border: 1px solid red; */
+    height: 70vh;
+  }
+
+  .box-title{
+    height: 1.4em;
+    font-size: 1.5em;
+  }
+  
+  .input-output-container{
+    margin-top: .2em;
+    border-radius: 5px;
+    padding: 1.2em;
+    overflow-Y: scroll;
+    border: 1px solid green;
+    height: 87%;
+  }
+
+  textarea{
+    width: 98%;
+    height: 100%;
+    white-space: pre-wrap;
+    border: none;
+    resize: none;
+    font-size: 1.2em;
+    outline: none;
+
+  }
+
+@media(max-width: 1070px){
+
+  .input-output-container{
+    height: 80%;
+  }
+
+  .post-heading{
+    width: 60%; 
+  }
+
+  .markdown-container{
+    flex-direction: column;
+  }
+
+  .markdown-container > *{
+    width: 100%;
+    height: 45vh;
+  }
+
+  .heading-container{
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+  }
+
+  label{
+    width: 100%; 
+    /* justify-self: center; */
+  }
+
+  label > input{
+    width:100vw;
+  }
+
+}

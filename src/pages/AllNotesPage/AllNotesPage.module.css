@@ -1,0 +1,104 @@
+.container {
+    max-width: 90%;
+    row-gap: 1.5em;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn{
+    align-self: flex-end;
+    height: 2em;
+  }
+
+  .all-btns{
+    display: flex;
+    gap: 1em;
+  }
+
+
+  /* transactions */
+
+  .posts {
+    margin: 1em 2px;
+    row-gap: 1.5em;
+    column-gap: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .posts > .post{
+    width: 310px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    color: #777;
+    border-bottom: 4px solid #1f9751;
+    cursor: pointer;
+    transition: transform 100ms;
+  }
+
+  div > a{
+    color: #777;
+    text-decoration: none;
+  }
+
+  .posts > div:active,  .posts > div:hover{
+    transform: scale(1.0);
+  }
+
+  .post >a {
+    display: flex;
+    flex-direction: column;
+    gap:1.2em;
+  }
+
+  .post-body{    
+    font-size: 1.1em;
+  }
+
+  .post-title{
+    font-weight: bold;
+  }
+
+  .post-date{
+    font-size: .8em;
+  }
+
+  /* Button */
+  button {
+    background: #1f9751;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 90ms;
+  }
+
+  button:active{
+    transform: scale(.95);
+  }
+
+
+  @media(max-width: 1229px){
+    .posts{
+      justify-content: center;
+    }
+  }
+
+  @media(max-width: 460px){
+    .posts > .post{
+      width: 80vw;
+    }
+  }

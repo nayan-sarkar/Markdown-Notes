@@ -1,0 +1,10 @@
+## Firebase React Project Workflow
+- create components,context,firebase,hooks,pages, folder
+- each page/component styled with css modules
+- create seperate hook for each logic
+ - first create sign up hook
+ - create global context to reflect user state in app
+ - create logout, since sign up automatically sings use
+ - use cleanup functions for async work
+- firebase auth , passes user token on each request, which can be used to protect routes, store user in react context
+- add filter rules with fb queries and fb rules
