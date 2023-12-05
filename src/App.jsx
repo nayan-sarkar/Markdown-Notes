@@ -21,7 +21,6 @@ export default function App(){
                     <Route path=":postId" element={<ViewPost/>}/>
                   </Route>
             </Route>
-            <Route path="/home" element={<h1>Home Page</h1>}/>
             <Route path="signup" element={<Signup/>}/>
             <Route path="login" element={<Login/>}/>
          </Route>

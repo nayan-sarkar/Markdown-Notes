@@ -8,5 +8,5 @@ export default function isAuthenticated(){
     if(data.user){
         return <Outlet/>
     }
-    else return <Navigate to = "/home"/>
+    else return <Navigate to = "/login"/>
 }
