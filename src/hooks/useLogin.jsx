@@ -16,7 +16,7 @@ export function useLogin(){
         try{
             // run fb logout
             const response = await  signInWithEmailAndPassword(auth,email,password);
-            console.log("User Signed In")
+            // console.log("User Signed In")
 
             // dispatch logout
             dispatch({type: 'LOGIN', payload: response.user})
@@ -27,7 +27,7 @@ export function useLogin(){
         }
 
         catch (error){
-            console.log(error.message);
+            // console.log(error.message);
             setError(error.message);
             setIsPending(false);
         }

@@ -14,7 +14,7 @@ export default function AllNotesPage(){
         <>
             <div className={styles.container}>
                 <button className={styles.btn} onClick={()=>navigate("viewpost")}>Make Post</button>
-                {console.log("Home Page Docs",documents)}
+                {/* {console.log("Home Page Docs",documents)} */}
                 <>
                 {error && <p>{error}</p>}
                 {documents && <PostsList posts={documents}/>}

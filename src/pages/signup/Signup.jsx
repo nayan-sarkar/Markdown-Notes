@@ -12,7 +12,7 @@ export default function Login(){
     const {error,isPending, signup} = useSignUp()
 
     function handleSubmit(e){
-        console.log("logic ran")
+        // console.log("logic ran")
         e.preventDefault();
         signup(email,password,displayName);
     }

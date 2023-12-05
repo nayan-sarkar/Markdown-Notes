@@ -9,11 +9,9 @@ export function useRealtimeCollection(collectionDataName, queryItemOne, queryIte
     // get Collections Data Reference
     let collectionsDataRef = collection(db, collectionDataName);
 
-    console.log("oner",collectionsDataRef )
     // filter Collections Data Reference if query exists
     collectionsDataRef = query(collectionsDataRef,where(queryItemOne , "==", queryItemTwo));
     
-    console.log("twoer",collectionsDataRef )
 
     // Realtime Listener Attached to Dom, Need Only Once
     React.useEffect(()=>{
@@ -25,7 +23,7 @@ export function useRealtimeCollection(collectionDataName, queryItemOne, queryIte
     
     // cleanup
     return ()=>{
-        console.log("Logic Cleaned")
+        // console.log("Logic Cleaned")
         unsub()
     }
 

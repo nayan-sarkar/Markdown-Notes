@@ -14,13 +14,14 @@ export default function ViewPost(){
     const {addDocument,deleteDocument, getOneDoc, updateDocument, response} = useAddUpdateDeleteDocument('notes');
     const [currentDocId, setCurrentDocId] = React.useState(postId);
     const {user} = useAuthContext();
+    const [showModal, setShowModal] = React.useState(false);
     
     
     React.useState(()=>{
         async function test(){
-            console.log("effect logic ran here");
+            // console.log("effect logic ran here");
             const {title, body} = await getOneDoc(postId);
-            console.log("Getting",title, body);
+            // console.log("Getting",title, body);
             setBody(body);
             setTitle(title);
         }
@@ -32,14 +33,17 @@ export default function ViewPost(){
     const uid = user.uid;
 
     async function handleSubmit(){
-        if(body && title){
-            console.log("Post Saved",{uid,body,title});
+        if(!body || !title){
+            setShowModal(true);
+        }
+        else{
+            // console.log("Post Saved",{uid,body,title});
             setCurrentDocId(await addDocument({uid,body,title}));
         }
         }
 
     function handleDelete(){
-        console.log("Deleted Doc with Id",(currentDocId));
+        // console.log("Deleted Doc with Id",(currentDocId));
         deleteDocument((currentDocId));
         setCurrentDocId(null);
         handleClear();
@@ -51,13 +55,22 @@ export default function ViewPost(){
     }
 
     function handleUpdate(){
-        console.log("Update Started");
-        updateDocument({body,title},currentDocId);
+        if(!body || !title){
+            setShowModal(p=>!p);
+        }else{
+            // console.log("Update Started");
+            updateDocument({body,title},currentDocId);
+        }
+        
     }
    
     return (
         <div className={styles.container}>
-            
+            {showModal && <div className={styles.modalbackdrop} onClick={()=>setShowModal(false)}>
+                <div className={styles.modal}>
+                    <p>Title or Post Cannot be Empty</p>
+                </div>
+            </div>}
             <div className={styles['post-container']}>
                 <div className={styles["heading-container"]}>
                     <label>

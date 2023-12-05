@@ -16,7 +16,7 @@ export function useSignUp(){
             //sign up user
             const response = await createUserWithEmailAndPassword(auth,email,password);
             
-            console.log("User Created",response.user)
+            // console.log("User Created",response.user)
 
             if(!response){
                 throw Error('Could not complete Sign Up')
@@ -24,13 +24,13 @@ export function useSignUp(){
 
             // add display name after profile creation
             updateProfile(auth.currentUser, { displayName: displayName })
-                .then(()=>{console.log("Display name is Updated");
+                .then(()=>{
                             auth.currentUser.providerData.forEach((profile) => {
-                                console.log("Sign-in provider: " + profile.providerId);
-                                console.log("  Provider-specific UID: " + profile.uid);
-                                console.log("  Name: " + profile.displayName);
-                                console.log("  Email: " + profile.email);
-                                console.log("  Photo URL: " + profile.photoURL);
+                                // console.log("Sign-in provider: " + profile.providerId);
+                                // console.log("  Provider-specific UID: " + profile.uid);
+                                // console.log("  Name: " + profile.displayName);
+                                // console.log("  Email: " + profile.email);
+                                // console.log("  Photo URL: " + profile.photoURL);
                               })})
                 .catch((e)=>console.log(e))
 
