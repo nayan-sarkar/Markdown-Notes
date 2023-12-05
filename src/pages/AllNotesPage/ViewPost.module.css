@@ -97,7 +97,9 @@
 
 @media(max-width: 1070px){
   .all-btns{
-    justify-content: center;
+    justify-content: flex-start;
+    align-items:center;
+    flex-wrap: wrap;
   }
 
   .markdown-container > *{
