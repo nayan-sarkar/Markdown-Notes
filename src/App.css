@@ -1,15 +1,155 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* base styles */
+
+:root{
+  --accent-one: #009432;
+  --accent-two: #e9f5ed;
+}
+/* Resets and Base Styles*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Poppins, sans-serif;
   margin: 0;
   font-size: 1.1em;
 }
-ul, li, p, h1, h2, h3, h4 {
-  margin: 0;
-  padding: 0;
-}
+
 ul {
   list-style-type: none;
 }
+
+/*Navbar*/
+
+/* navbar styles */
+.navbar {
+  width: 100%;
+  background: var(--accent-two);
+  padding: 20px 10px;
+  box-sizing: border-box;
+
+}
+.navbar ul {
+  display: flex;
+  margin: 0 auto;
+  max-width: 85vw;
+  align-items: center;
+}
+
+.title {
+  margin-right: auto;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+}
+.navbar button, .navbar a {
+  margin-left: 16px;
+}
+.navbar a {
+  color: var(--accent-one);
+  text-decoration: none;
+}
+
+@media(max-width: 720px){
+  .navbar ul{
+    flex-direction: column;
+    gap: .4em;
+    justify-content: center;
+  }
+
+  li{
+    width: 100%;
+    text-align: center;
+  }
+  
+}
+
+
+/* Button */
+button {
+  background: var(--accent-one);
+  border: none;
+  padding: 6px 15px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 90ms;
+}
+
+button:active{
+  transform: scale(.95);
+}
+
+/* Posts */
+
+
+.posts {
+  margin: 1em 2px;
+  row-gap: 1.5em;
+  column-gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post-heading{
+  line-height: 2em;
+  width: 70%; 
+  font-size: 1.2em;
+  border: none;
+  border-bottom: 2px solid var(--accent-one);
+  outline: none;
+}
+
+.posts > .post{
+  width: 310px;
+  border: 1px solid #f2f2f2;
+  box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  color: #777;
+  border-bottom: 4px solid var(--accent-one);
+  cursor: pointer;
+  transition: transform 100ms;
+}
+
+/* Forms */
+
+form {
+  max-width: 360px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+form > input {
+  padding: 8px 6px;
+  margin: .5em 0px;
+  font-size: 1em;
+  color: #777;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--accent-one);
+}
+
+form > input:focus{
+  border: 3px solid var(--accent-one);
+}
+
+@media(max-width: 480px){
+form {
+      max-width: 80vw;
+  }
+  
+}
+

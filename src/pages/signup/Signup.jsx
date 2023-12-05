@@ -1,4 +1,3 @@
-import styles from './Signup.module.css';
 import React from 'react';
 import {useSignUp} from './../../hooks/useSignUp';
 import {useAuthContext} from '../../hooks/useAuthContext';
@@ -19,35 +18,29 @@ export default function Login(){
 
     return (
         <>{data.user && <Navigate to='/'/>}
-        <form className={styles['signup-form']} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <h2>Sign Up</h2>
-            <label>
-                <span>Display Name</span>
                 <input
                     type='text'
                     value={displayName}
                     onChange={(e)=>{setDisplayName(e.target.value)}}
                     required
+                    placeholder = "Display Name"
                 />
-            </label>
-            <label>
-                <span>Email</span>
                 <input
                     type="email"
                     onChange={(e)=>setEmail(e.target.value)}
                     value= {email}
                     required
+                    placeholder = "Email Address"
                 />
-            </label>
-            <label>
-                <span>Password</span>
                 <input
                     type="password"
                     onChange={(e)=>setPassword(e.target.value)}
                     value={password}
                     required
+                    placeholder = "Password"
                 />
-            </label>
             {!isPending && <button className="btn">Sign Up</button>}
             {isPending && <button className="btn" disabled>Loading</button>}
             {error && <p>{error}</p>}

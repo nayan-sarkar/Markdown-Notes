@@ -1,4 +1,3 @@
-import styles from './Login.module.css';
 import React from 'react';
 import {useLogin} from '../../hooks/useLogin';
 import {useAuthContext} from '../../hooks/useAuthContext';
@@ -18,30 +17,25 @@ export default function Login(){
     return (
         <>
         {data.user && <Navigate to='/'/>}
-        <form className={styles['login-form']} onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit}>
             <h2>Login</h2>
-            <label>
-                <span>email: </span>
                 <input
                     type="email"
                     onChange={(e)=>setEmail(e.target.value)}
                     value= {email}
                     required
+                    placeholder="Email Address"
                 />
-            </label>
-            <label>
-                <span>password</span>
                 <input
                     type="password"
                     onChange={(e)=>setPassword(e.target.value)}
                     value={password}
                     required
+                    placeholder="Password"
                 />
-            </label>
-            {!isPending && <button className="btn">Login</button>}
-            {isPending && <button className="btn" disabled>Loading</button>}
+            {!isPending && <button>Login</button>}
+            {isPending && <button disabled>Loading</button>}
             {error&&<p>{error}</p>}
-
         </form>
         </>
     )

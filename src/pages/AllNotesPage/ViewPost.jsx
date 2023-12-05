@@ -5,9 +5,10 @@ import remarkGfm from 'remark-gfm';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {useAddUpdateDeleteDocument} from './../../hooks/useAddUpdateDeleteDocument';
 import {useAuthContext} from './../../hooks/useAuthContext';
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 
 export default function ViewPost(){
+    const navigate = useNavigate();
     const {postId} = useParams();
     const [body, setBody] = React.useState('');
     const [title, setTitle] = React.useState('');
@@ -47,6 +48,7 @@ export default function ViewPost(){
         deleteDocument((currentDocId));
         setCurrentDocId(null);
         handleClear();
+        navigate('..');
       
     }
     function handleClear(){
@@ -71,25 +73,25 @@ export default function ViewPost(){
                     <p>Title or Post Cannot be Empty</p>
                 </div>
             </div>}
-            <div className={styles['post-container']}>
-                <div className={styles["heading-container"]}>
-                    <label>
-                        <p>Post Title:</p>
-                        <input
-                            type = "text"
-                            placeholder = "Enter Post Title"
-                            onChange = {(e)=>setTitle(e.target.value)}
-                            className={styles['post-heading']}
-                            value={title}
-                        />
-                    </label>
-                    <div className={styles['all-btns']}>
+            <div className={styles['all-btns']}>
+                        <button onClick={()=>navigate('/')}>All Notes</button>
                         {currentDocId && <button onClick={()=>handleUpdate()}>Update</button>}
                         {!currentDocId && <button onClick={()=>handleSubmit()}>Save</button>}
                         {currentDocId && <button onClick={()=>handleDelete()}>Delete</button>}
                         <button onClick={()=>handleClear()}>Clear</button>
                         
                     </div>
+            <div className={styles['post-container']}>
+                <div className={styles["heading-container"]}>
+                    <label>
+                        <input
+                            type = "text"
+                            placeholder = "Enter Post Title"
+                            onChange = {(e)=>setTitle(e.target.value)}
+                            className="post-heading"
+                            value={title}
+                        />
+                    </label>
                 </div>
                 <div className={styles['markdown-container']}>
                     <div>
