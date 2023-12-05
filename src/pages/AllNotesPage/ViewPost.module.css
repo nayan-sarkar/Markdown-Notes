@@ -100,7 +100,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    position: absolute;
+    position: fixed;
     justify-content: center;
     top: 0;
     left: 0;
