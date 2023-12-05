@@ -45,12 +45,23 @@ ul {
   letter-spacing: 1px;
   font-size: 1.2em;
 }
+
 .navbar button, .navbar a {
   margin-left: 16px;
 }
+
 .navbar a {
   color: var(--accent-one);
   text-decoration: none;
+}
+
+.post-heading{
+  line-height: 2em;
+  width: 70%; 
+  font-size: 1.2em;
+  border: none;
+  border-bottom: 2px solid var(--accent-one);
+  outline: none;
 }
 
 @media(max-width: 720px){
@@ -83,44 +94,6 @@ button {
 
 button:active{
   transform: scale(.95);
-}
-
-/* Posts */
-
-
-.posts {
-  margin: 1em 2px;
-  row-gap: 1.5em;
-  column-gap: 1em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.post-heading{
-  line-height: 2em;
-  width: 70%; 
-  font-size: 1.2em;
-  border: none;
-  border-bottom: 2px solid var(--accent-one);
-  outline: none;
-}
-
-.posts > .post{
-  width: 310px;
-  border: 1px solid #f2f2f2;
-  box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  align-items: flex-start;
-  position: relative;
-  overflow: hidden;
-  color: #777;
-  border-bottom: 4px solid var(--accent-one);
-  cursor: pointer;
-  transition: transform 100ms;
 }
 
 /* Forms */

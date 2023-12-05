@@ -18,10 +18,41 @@
   }
 
 
+
+
+
   div > a{
     color: #777;
     text-decoration: none;
   }
+
+
+.posts {
+  margin: 1em 2px;
+  row-gap: 1.5em;
+  column-gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.posts > .post{
+  width: 310px;
+  border: 1px solid #f2f2f2;
+  box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  color: #777;
+  border-bottom: 4px solid var(--accent-one);
+  cursor: pointer;
+  transition: transform 100ms;
+}
+
 
   .posts > div:active,  .posts > div:hover{
     transform: scale(1.0);
