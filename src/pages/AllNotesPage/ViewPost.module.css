@@ -117,6 +117,15 @@
   }
 
 @media(max-width: 1070px){
+  .all-btns{
+    margin: 0px;
+  }
+
+  .markdown-container > *{
+    max-width: 85vw;
+    /* border: 1px solid red; */
+    height: 70vh;
+  }
 
   .input-output-container{
     height: 80%;
