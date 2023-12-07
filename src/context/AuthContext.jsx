@@ -28,9 +28,10 @@ export function AuthContextProvider({children}){
 
     React.useEffect(()=>{
             onAuthStateChanged(auth, (user) => {
-                dispatch({type: "AUTH_IS_READY", payload: user})
+                dispatch({type: "AUTH_IS_READY", payload: user});
+                console.log(auth.currentUser);
             });
-    },[])
+    },[auth.currentUser])
     
     return (
         <AuthContext.Provider value={{...state, dispatch}}>
