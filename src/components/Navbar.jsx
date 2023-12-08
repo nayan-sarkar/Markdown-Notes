@@ -10,6 +10,7 @@ export default function Navbar(){
             <ul>
                 <li className="title"><Link to="/"><h1>Markdown Notes</h1></Link></li>
                 {user &&
+                <>
                  <li>
                     <div className="user-info">
                         {user.photoURL && <li><img
@@ -23,8 +24,10 @@ export default function Navbar(){
                         </li>}
                         <li>{user.displayName}</li>
                     </div>
-                </li>}
+                </li>
                 <li><button onClick={logout}>Logout</button></li>
+                </>
+                }
             </ul>
         </nav>
     )
