@@ -153,6 +153,10 @@ form {
   flex-direction: column;
   gap: 1em;
 }
+
+.btns > img{
+  height: 2em;
+}
   
 }
 

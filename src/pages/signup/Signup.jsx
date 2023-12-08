@@ -21,7 +21,7 @@ export default function Login(){
         <>{data.user && <Navigate to='/'/>}
         <form onSubmit={handleSubmit}>
             <div className="login-signup">
-                <Link to="/login" end><h1>Login</h1></Link>
+                <Link to="/login"><h1>Login</h1></Link>
                 <Link to="#" className="blue-white"><h1>Sign Up</h1></Link>
             </div>
                 <input
