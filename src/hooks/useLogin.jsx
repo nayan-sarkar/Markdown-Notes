@@ -8,6 +8,7 @@ export function useLogin(){
     const [isPending,setIsPending] = React.useState(false);
     const {dispatch} = useAuthContext();
 
+    // login with google Account
     const googleLogin = async function (){
         setError(null);
         setIsPending(true);
@@ -27,22 +28,21 @@ export function useLogin(){
             console.log(error.message);
             setError(error.message);
             setIsPending(false);
-
         }
 
     }
 
+    // login with username and pass
     const login = async function(email, password){
         setError(null);
         setIsPending(true);
 
-        // sign user out
         try{
-            // run fb logout
+
             const response = await  signInWithEmailAndPassword(auth,email,password);
             // console.log("User Signed In")
 
-            // dispatch logout
+            // dispatch login
             dispatch({type: 'LOGIN', payload: response.user})
 
             // update State
