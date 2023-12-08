@@ -9,12 +9,6 @@ export default function Navbar(){
         <nav className="navbar">
             <ul>
                 <li className="title"><Link to="/">Markdown Notes</Link></li>
-                
-                {!user && <>
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/signup">Sign Up</Link></li>
-                </>}
-                
                 {user &&
                  <>
                  <li>{user.displayName}</li>

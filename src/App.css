@@ -77,8 +77,12 @@ ul {
   
 }
 
-
 /* Button */
+.btns{
+  display: flex;
+  justify-content: space-between;
+}
+
 button {
   background: var(--accent-one);
   border: none;
@@ -118,10 +122,37 @@ form > input:focus{
   border: 3px solid var(--accent-one);
 }
 
+.login-signup{
+  margin: 0px auto;
+  display: flex;
+}
+
+.login-signup > *{
+  min-width: 50%;
+  text-align: center;
+}
+
+
+.blue-white{
+  background: var(--accent-one);
+  color: #fff;
+  width: 100%;
+}
+
 @media(max-width: 480px){
 form {
       max-width: 80vw;
   }
+
+.login-signup > a >h1{
+  font-size: 1em;
+}
+
+.btns{
+  margin-top: 1em;
+  flex-direction: column;
+  gap: 1em;
+}
   
 }
 

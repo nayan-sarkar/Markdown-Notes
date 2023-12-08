@@ -1,7 +1,8 @@
 import React from 'react';
 import {useLogin} from '../../hooks/useLogin';
 import {useAuthContext} from '../../hooks/useAuthContext';
-import {Navigate} from 'react-router-dom';
+import {Navigate, Link} from 'react-router-dom';
+import signInIcon from './login.svg';
 
 export default function Login(){
     const [email, setEmail] = React.useState('');
@@ -18,7 +19,10 @@ export default function Login(){
         <>
         {data.user && <Navigate to='/'/>}
         <form className="login-form" onSubmit={handleSubmit}>
-            <h2>Login</h2>
+            <div className="login-signup">
+                <Link to="#"><h1 className="blue-white">Login</h1></Link>
+                <Link to="/signup"><h1>Sign Up</h1></Link>
+            </div>
                 <input
                     type="email"
                     onChange={(e)=>setEmail(e.target.value)}
@@ -33,8 +37,11 @@ export default function Login(){
                     required
                     placeholder="Password"
                 />
-            {!isPending && <button>Login</button>}
-            {isPending && <button disabled>Loading</button>}
+            <div className="btns">
+                {!isPending && <button>Login</button>}
+                {isPending && <button disabled>Loading</button>}
+                <img src={signInIcon}/>
+            </div>
             {error&&<p>{error}</p>}
         </form>
         </>
