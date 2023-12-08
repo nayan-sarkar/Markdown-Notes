@@ -69,9 +69,8 @@ ul {
 }
 
 @media(max-width: 720px){
-  .navbar ul{
+  .navbar > ul{
     flex-direction: column;
-    gap: .4em;
     justify-content: center;
   }
 
@@ -83,6 +82,7 @@ ul {
   .user-info{
     flex-direction: column;
     margin-right: 0px;
+    gap: 0em;
   }
 
   
