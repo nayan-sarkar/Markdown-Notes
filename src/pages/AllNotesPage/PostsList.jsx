@@ -10,7 +10,8 @@ export default function PostsList({posts}){
                 <Link to={`viewpost/${post.id}`}>
                 <p className={styles['post-title']}>{post.title}</p>
                 <p className={styles['post-body']}>{`${post.body.slice(0,70)}...`}</p>
-                <p className={styles['post-date']}>Created at {post.createdAt.toDate().toString().slice(0,-29)}</p>
+                {!post.lastModifiedAt && <p className={styles['post-date']}>Created at {post.createdAt?.toDate().toString().slice(0,-29)}</p>}
+                {post.lastModifiedAt && <p className={styles['post-date']}>Last Modified at {post.lastModifiedAt.toDate().toString().slice(0,-29)}</p>}
                 </Link>
             </div>
         ))}

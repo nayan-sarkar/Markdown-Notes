@@ -17,21 +17,20 @@ export default function ViewPost(){
     const {user} = useAuthContext();
     const [showModal, setShowModal] = React.useState(false);
     
+    const [postData,setPostData] = React.useState(null);
     
     React.useState(()=>{
-        async function test(){
-            // console.log("effect logic ran here");
-            const {title, body} = await getOneDoc(postId);
-            // console.log("Getting",title, body);
-            setBody(body);
-            setTitle(title);
+        async function getPost(){
+            console.log("get post use effect ran here");
+            const result = await getOneDoc(postId);
+            setPostData({...result});
+            setBody(result.body);
+            setTitle(result.title);           
         }
         if(postId){
-            test();
+            getPost();
         }
     },[])
-
-    const uid = user.uid;
 
     async function handleSubmit(){
         if(!body || !title){
@@ -39,7 +38,7 @@ export default function ViewPost(){
         }
         else{
             // console.log("Post Saved",{uid,body,title});
-            setCurrentDocId(await addDocument({uid,body,title}));
+            setCurrentDocId(await addDocument({uid: user.uid,body,title}));
         }
         }
 
@@ -48,7 +47,7 @@ export default function ViewPost(){
         deleteDocument((currentDocId));
         setCurrentDocId(null);
         handleClear();
-        navigate('..');
+        navigate('/');
       
     }
     function handleClear(){
@@ -60,8 +59,10 @@ export default function ViewPost(){
         if(!body || !title){
             setShowModal(p=>!p);
         }else{
-            // console.log("Update Started");
-            updateDocument({body,title},currentDocId);
+            console.log("Update Started");
+            const updatedPost = {...postData, body, title};
+            console.log(updatedPost)
+            updateDocument({...postData, body, title},currentDocId);
         }
         
     }
@@ -83,7 +84,6 @@ export default function ViewPost(){
                     </div>
             <div className={styles['post-container']}>
                 <div className={styles["heading-container"]}>
-                    <label>
                         <input
                             type = "text"
                             placeholder = "Enter Post Title"
@@ -91,7 +91,6 @@ export default function ViewPost(){
                             className="post-heading"
                             value={title}
                         />
-                    </label>
                 </div>
                 <div className={styles['markdown-container']}>
                     <div>

@@ -102,6 +102,10 @@
     flex-wrap: wrap;
   }
 
+  .all-btns > button{
+    padding: .15px 10px;
+  }
+
   .markdown-container > *{
     max-width: 85vw;
     /* border: 1px solid red; */
@@ -127,17 +131,10 @@
 
   .heading-container{
     flex-direction: column;
-    gap: 1em;
-    align-items: center;
   }
 
-  label{
-    width: 100%; 
-    /* justify-self: center; */
-  }
-
-  label > input{
-    width:100vw;
+  .heading-container > input{
+    width: 90%;
   }
 
 }
