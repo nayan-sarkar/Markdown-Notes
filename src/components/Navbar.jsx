@@ -8,11 +8,22 @@ export default function Navbar(){
     return (
         <nav className="navbar">
             <ul>
-                <li className="title"><Link to="/">Markdown Notes</Link></li>
+                <li className="title"><Link to="/"><h1>Markdown Notes</h1></Link></li>
                 {user &&
                  <>
-                 <li>{user.displayName}</li>
-                <li><button onClick={logout}>Logout</button></li>
+                    <div className="user-info">
+                        {user.photoURL && <li><img
+                                src={`${user.photoURL}`}
+                                alt="photo url"
+                                style={{
+                                    height: "50px",
+                                    borderRadius: "50%"
+                                }}
+                                />
+                        </li>}
+                        <li>{user.displayName}</li>
+                    </div>
+                    <li><button onClick={logout}>Logout</button></li>
                 </>}
             </ul>
         </nav>

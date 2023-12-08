@@ -7,7 +7,7 @@ import signInIcon from './login.svg';
 export default function Login(){
     const [email, setEmail] = React.useState('');
     const [password,setPassword] = React.useState('');
-    const {login, error, isPending} = useLogin();
+    const {login, googleLogin,  error, isPending} = useLogin();
     const data = useAuthContext();
 
     function handleSubmit(e){
@@ -40,7 +40,7 @@ export default function Login(){
             <div className="btns">
                 {!isPending && <button>Login</button>}
                 {isPending && <button disabled>Loading</button>}
-                <img src={signInIcon}/>
+                <img src={signInIcon} onClick={()=>googleLogin()}/>
             </div>
             {error&&<p>{error}</p>}
         </form>

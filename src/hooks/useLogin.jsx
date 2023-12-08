@@ -1,12 +1,36 @@
 import React from 'react';
 import {auth} from  './../firebase/config';
-import {signInWithEmailAndPassword} from 'firebase/auth';
+import {signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
 import {useAuthContext} from './useAuthContext';
 
 export function useLogin(){
     const [error,setError] = React.useState(null);
     const [isPending,setIsPending] = React.useState(false);
     const {dispatch} = useAuthContext();
+
+    const googleLogin = async function (){
+        setError(null);
+        setIsPending(true);
+
+        const provider = new GoogleAuthProvider();
+
+        try{
+            const result = await signInWithPopup(auth, provider);
+            console.log("this is output ",result);
+            dispatch({type: 'LOGIN', payload: result.user});
+
+            setIsPending(false);
+            setError(null);
+
+
+        }catch(error){
+            console.log(error.message);
+            setError(error.message);
+            setIsPending(false);
+
+        }
+
+    }
 
     const login = async function(email, password){
         setError(null);
@@ -33,5 +57,5 @@ export function useLogin(){
         }
     }
 
-    return {login, error, isPending}
+    return {login, googleLogin, error, isPending}
 }

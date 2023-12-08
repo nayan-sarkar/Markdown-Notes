@@ -1,8 +1,9 @@
 import React from 'react';
 import {useSignUp} from './../../hooks/useSignUp';
+import {useLogin} from '../../hooks/useLogin';
 import {useAuthContext} from '../../hooks/useAuthContext';
 import {Navigate, Link} from 'react-router-dom';
-import signupIcon from './signup.svg';
+import signupWithGoogle from './signup.svg';
 
 export default function Login(){
     const data = useAuthContext();
@@ -10,6 +11,7 @@ export default function Login(){
     const [password,setPassword] = React.useState('');
     const [displayName,setDisplayName] = React.useState('');
     const {error,isPending, signup} = useSignUp()
+    const {googleLogin} = useLogin();
 
     function handleSubmit(e){
         // console.log("logic ran")
@@ -29,7 +31,7 @@ export default function Login(){
                     value={displayName}
                     onChange={(e)=>{setDisplayName(e.target.value)}}
                     required
-                    placeholder = "Display Name"
+                    placeholder = "Name"
                 />
                 <input
                     type="email"
@@ -48,7 +50,7 @@ export default function Login(){
             <div className="btns">
                 {!isPending && <button className="btn">Sign Up</button>}
                 {isPending && <button className="btn" disabled>Loading</button>}
-                <img src={signupIcon}/>
+                <img src={signupWithGoogle} onClick={()=>googleLogin()}/>
             </div>
             
             {error && <p>{error}</p>}
