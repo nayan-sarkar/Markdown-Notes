@@ -138,3 +138,10 @@
   }
 
 }
+
+@media(max-width: 540px){
+  .all-btns{
+     width: 100%;
+     justify-content: center;
+  }
+}
