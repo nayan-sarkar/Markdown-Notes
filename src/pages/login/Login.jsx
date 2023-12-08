@@ -18,7 +18,7 @@ export default function Login(){
     return (
         <>
         {data.user && <Navigate to='/'/>}
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className="login-signup">
                 <Link to="#"><h1 className="blue-white">Login</h1></Link>
                 <Link to="/signup"><h1>Sign Up</h1></Link>
