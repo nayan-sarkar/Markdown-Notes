@@ -8,7 +8,7 @@ export default function Navbar(){
     return (
         <nav className="navbar">
             <ul>
-                <li className="title"><Link to="/">MyMarkdown Notes</Link></li>
+                <li className="title"><Link to="/">Markdown Notes</Link></li>
                 
                 {!user && <>
                     <li><Link to="/login">Login</Link></li>
