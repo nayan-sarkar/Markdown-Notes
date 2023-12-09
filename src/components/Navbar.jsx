@@ -13,7 +13,7 @@ export default function Navbar(){
                 <>
                  <li>
                     <div className="user-info">
-                        {user.photoURL && <li><img
+                        {user.photoURL && <img
                                 src={`${user.photoURL}`}
                                 alt="photo url"
                                 style={{
@@ -21,8 +21,8 @@ export default function Navbar(){
                                     borderRadius: "50%"
                                 }}
                                 />
-                        </li>}
-                        <li>{user.displayName}</li>
+                        }
+                        <span>{user.displayName}</span>
                     </div>
                 </li>
                 <li><button onClick={logout}>Logout</button></li>

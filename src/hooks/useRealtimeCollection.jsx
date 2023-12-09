@@ -1,6 +1,6 @@
 import React from 'react';
-import {db,auth} from './../firebase/config';
-import {onSnapshot,collection, query, where, orderBy} from 'firebase/firestore';
+import {db} from './../firebase/config';
+import {onSnapshot,collection, query, where} from 'firebase/firestore';
 
 export function useRealtimeCollection(collectionDataName, queryItemOne, queryItemTwo){
     const [documents,setDocuments] = React.useState(null);
