@@ -1,4 +1,4 @@
-![Screenshot](./Image-2.png)
+![Screenshot](./screenshots/Image-2.png)
 
 # Markdown Notes
 A single page web app which allows users to create notes with markdown syntax
@@ -18,5 +18,5 @@ https://markdown-notes-2a9eb.web.app/login
 - State Management across the entire app done with Context API
 
 ## Images
-![Screenshot](./Image-1.png)
-![Screenshot](./Image-3.png)
+![Screenshot](./screenshots/Image-1.png)
+![Screenshot](./screenshots/Image-3.png)
