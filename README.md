@@ -1,7 +1,7 @@
-![Screenshot](./screenshots/Image-2.png)
-
 # Markdown Notes
 A single page web app which allows users to create notes with markdown syntax
+
+![Screenshot](./screenshots/Image-2.png)
 
 ## Live Site
 https://markdown-notes-2a9eb.web.app/login
