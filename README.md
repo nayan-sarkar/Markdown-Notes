@@ -3,7 +3,6 @@ A single page web app which allows users to create notes with markdown syntax
 
 ![Screenshot](./screenshots/Image-2.png)
 
-
 <b>Live Site:</b> https://markdown-notes-2a9eb.web.app/
 
 <b>Demo:</b> https://www.youtube.com/watch?v=y-9LWo9M3dg
@@ -14,7 +13,7 @@ A single page web app which allows users to create notes with markdown syntax
 ## Features
 - Built with React 18 using Functional Components on the Frontend and Firestore Realtime Database on the Backend
 - Full Responsive, compatible with Mobile, Tablet and Desktop screen sizes
-- Integrated with [React Markdown](https://github.com/remarkjs/react-markdown) to render markdown syntax
+- Uses [React Markdown](https://github.com/remarkjs/react-markdown) to render markdown syntax
 - Page Routing with Route Protection done with React Router 6
 - Logic Encapusaltion for Authentication and Data operations done with custom React Hooks
 - Deployed on Google Cloud Platform with Firebase Authentication and Cloud Firestore Realtime NoSQL database
