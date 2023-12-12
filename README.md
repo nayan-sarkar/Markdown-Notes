@@ -14,6 +14,7 @@ https://markdown-notes-2a9eb.web.app/
 - Full Responsive, compatible with Mobile, Tablet and Desktop screen sizes
 - Integrated with [React Markdown](https://github.com/remarkjs/react-markdown) to render markdown syntax
 - Page Routing with Route Protection done with React Router 6
+- Logic Encapusaltion for Authentication and Data operations done with custom React Hooks
 - Deployed on Google Cloud Platform with Firebase Authentication and Cloud Firestore Realtime NoSQL database
 - State Management across the entire app done with Context API
 
