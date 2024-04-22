@@ -17,9 +17,9 @@ export default function App(){
           <Route path="/" element={<Layout/>}>
             <Route element ={<IsAuthenticated/>}>
                   <Route index element={<AllNotesPage/>}/>
-                  <Route path="/viewpost" element={<ViewPost/>}>
-                  <Route path=":postId" element={<ViewPost/>}/>
-              </Route>
+                  <Route path="viewpost" element={<ViewPost/>}>
+                      <Route path=":postId" element={<ViewPost/>}/>
+                  </Route>
             </Route>
             <Route path="signup" element={<Signup/>}/>
             <Route path="login" element={<Login/>}/>
